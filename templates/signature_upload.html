@@ -1,0 +1,111 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Upload Signature
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<script type='text/javascript'>
+function preview_image(event)
+{
+ var reader = new FileReader();
+ reader.onload = function()
+ {
+  var output = document.getElementById('output_image');
+  output.src = reader.result;
+ }
+ reader.readAsDataURL(event.target.files[0]);
+}
+
+
+</script>
+
+
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+<!--<script type=text/javascript>-->
+<!--        $(function() {-->
+<!--          $('input#test').bind('click', function() {-->
+<!--            $.getJSON('/mlalgo',-->
+<!--                function(data) {-->
+<!--              //do nothing-->
+<!--            });-->
+<!--            return false;-->
+<!--          });-->
+<!--        });-->
+<!--</script>-->
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/signin.css') }}">
+<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script type="text/javascript">
+  function demoShow(){
+//  document.getElementByd('p2').style.display="block";
+document.getElementById("p2").style.visibility = "visible";
+document.getElementById("p3").style.visibility = "visible";
+
+}
+</script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="upload-sign-form">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="{{url_for('home')}}">CalPERS</a>
+        
+      </div>
+      <ul class="nav navbar-nav ">
+        
+        <li class="dropdown">
+          <a class="dropdown-toggle " id="mynav" data-toggle="dropdown" > {% if session.loggedin %}
+            HI {{session.user}}
+                    {% endif %}
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu" >
+            <li ><a class="mynav-contents" href="{{url_for('profile')}}">Profile</a></li>
+            <li ><a class="mynav-contents" href="{{url_for('logout')}}">Logout</a></li>
+           
+          </ul>
+        </li>
+        
+      </ul>
+    </div>
+  </nav>
+<div class="container">
+    <div class="col-xs-4">
+ 
+    <label class="upload-title" for="inputImage">UPLOAD SIGNATURE</label>
+    <label id="preferred-name"> Enter your preferred name:</label>
+    <input id="preferred" type="text"  required="">
+    <br><br>
+        <form method="post" enctype="multipart/form-data" action="{{url_for('detect_signature')}}">
+    <input type="file" id="img" name="file" onchange="preview_image(event)">
+    <br>
+
+    <input class="login-button-save" type="submit" value="SAVE SIGNATURE"  id="test" onclick="demoShow()"></input>
+            </form>
+        <img id="output_image" class="output_image">
+        {% if message=="success" %}
+<button class="login-button-preview" type="button" id="p12">CROP</button>
+        <form action="{{url_for('upload_file')}}">
+    <button class="login-button-upload" type="submit" id="p13">SIGNATURE UPLOAD</button>
+            </form>
+        {% endif %}
+        <br>
+        {% if message=="upload" %}
+            <h2>Image is successfully uploaded</h2>
+        {% endif %}
+
+
+<!--    <img src="../templates/edge1.jpg" alt="detected image" width="500px" height="600px">-->
+
+    
+ 
+ 
+  </div>
+</div> <!-- /container -->
+</div>
+{% endblock %}

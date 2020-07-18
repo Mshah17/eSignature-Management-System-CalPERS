@@ -1,0 +1,145 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Draw Signature
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/signin.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+var canvas, ctx, flag = false,
+pX=0,cX=0,pY=0,cY=0,dot_flag=false;
+var x = "black",y = 2;
+
+function init() {
+canvas = document.getElementById('can');
+ctx = canvas.getContext("2d");
+w = canvas.width;
+h = canvas.height;
+
+canvas.addEventListener("mousemove",function(e){
+findxy('move',e)},false);
+canvas.addEventListener("mousedown",function(e){
+findxy('down',e)},false);
+canvas.addEventListener("mouseup",function(e){
+findxy('up',e)},false);
+canvas.addEventListener("mouseout",function(e){
+findxy('out',e)},false);
+}
+
+function color(obj) {
+switch (obj.id) {
+case "white":
+x="white";
+}
+if (x=="white")y=20;
+else y=2;
+}
+function draw() {
+ctx.beginPath();
+ctx.moveTo(pX,pY);
+ctx.lineTo(cX,cY);
+ctx.strokeStyle=x;
+ctx.lineWidth=y;
+ctx.stroke();
+ctx.closePath();
+}
+function erase(){
+ctx.clearRect(0,0,w,h);
+document.getElementById("canvasimg").style.display="none";
+document.getElementById('b2').style.visibility="hidden";
+window.location.reload();
+}
+function save(){
+document.getElementById("canvasimg").style.border="2px solid";
+var dataURL=canvas.toDataURL();
+document.getElementById("canvasimg").src=dataURL;
+document.getElementById("canvasimg").style.display="inline";
+document.querySelector('.btn2').style.display='block';
+}
+function findxy(res,e){
+if(res=='down'){
+pX=cX;
+pY=cY;
+cX=e.clientX-canvas.offsetLeft;
+cY=e.clientY-canvas.offsetTop;
+flag=true;
+dot_flag=true;
+if(dot_flag) {
+ctx.beginPath();
+ctx.fillStyle=x;
+ctx.fillRect(cX,cY,2,2);
+ctx.closePath();
+dot_flag=false;
+}
+}
+if(res=='up'||res=="out"){
+flag=false;
+}
+if(res=='move'){
+if(flag){
+pX=cX;
+pY=cY;
+cX=e.clientX-canvas.offsetLeft;
+cY=e.clientY-canvas.offsetTop;
+draw();
+}}
+}
+</script>
+{% endblock %}
+
+{% block content %}
+
+    <!-- <div>
+    <h2>Write your code here for Draw signature</h2>
+</div> -->
+<div class="draw-sign-form">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="{{url_for('home')}}">CalPERS</a>
+
+          </div>
+          <ul class="nav navbar-nav ">
+
+            <li class="dropdown">
+              <a class="dropdown-toggle " id="mynav" data-toggle="dropdown" > {% if session.loggedin %}
+                HI {{session.user}}
+                        {% endif %}
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu" >
+                <li ><a class="mynav-contents" href="{{url_for('profile')}}">Profile</a></li>
+                <li ><a class="mynav-contents" href="{{url_for('logout')}}">Logout</a></li>
+
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+
+      <div class="canvas-body">
+        <h2>DRAW SIGNATURE</h2>
+        <label id="preferred-name"> Enter your preferred name:</label>
+    <input id="preferred" type="text"  required="">
+    <br><br>
+
+<body class="draw-sign-class" onload="init()">
+
+
+    <canvas id="can" class="canvas" width="400" height="400" ></canvas>
+    <div class="eraser">ERASER</div>
+    <div style="position:absolute;top:330px;left:46%;width:40px;height:20px;background:white;border:2px solid;" id="white" onclick="color(this)"></div>
+    <img id="canvasimg" >
+    <input type="button" value="SAVE" id="btn" size="30" onclick="save()" >
+    <input type="button" value="CLEAR" id="clr" size="23" onclick="erase()" >
+    <button class="btn2" id="b2" >SUBMIT</button>
+    </body>
+  </div>
+
+</div>
+
+{% endblock %}

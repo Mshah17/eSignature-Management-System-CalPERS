@@ -1,0 +1,1064 @@
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .left {
+    left: 0;
+   top:70px;
+   background: url("https://cdn.dribbble.com/users/79571/screenshots/11475281/media/b74ece3d1cbad46aa8eac6239b14fc2c.png");
+    background-size: contain;  
+    background-repeat: no-repeat;
+   
+}
+ 
+  .right {
+    right: 0;    
+    background-color: steelblue;   
+    }
+  .right h2{
+  
+      left:50%;
+      bottom:50px;
+       text-align: center; 
+      font-family: sans-serif;
+      color: white;
+      
+  }
+  .right #e-sign{
+    left:50%;
+    bottom:50px;
+     text-align: center; 
+    font-family: sans-serif;
+    /* background-color: white; */
+    font-style:italic;
+    font-size: 20px;
+    margin-bottom: 20px;
+    /* text-decoration: underline; */
+    color: white;
+    text-shadow:tomato 2px 2px 10px;
+/* text-shadow: tomato; */
+  }
+  .right input{
+      background:transparent;
+      color:white;
+      border:none;
+      border-bottom: 1px solid #fff;
+      width:100%;
+      font-size: 16px;
+  }
+  .right input:hover{
+      outline: none;
+  }
+  
+  .right .dropdown{
+      background:transparent;
+      font-size:16px;
+     
+      color:white;
+      border-bottom: 1px solid #fff;
+  }
+  
+ .right .sec-options{
+background:steelblue;
+ }
+  .right label{
+    font-family: sans-serif;
+    color:white;
+    padding:7px;
+
+  }
+  .right img{
+    width:70%;
+    height:70%;
+    bottom :25px;
+    left:50px;
+    position: relative;
+  }
+
+  .right .loginform{
+
+    top:15%;
+    left:50%;
+   padding:30px;
+    width:400px;
+    height:210px;   
+    border-radius: 10px;
+    transform: translate(100px, 50px);
+    
+}
+ /* .right #signup-{
+  color:white;
+  justify-content: center;
+}  */
+
+.alert {
+  padding: 15px;
+  background-color: #f44336;
+  color: white;
+  margin:27px;
+ 
+  text-align: center;
+} 
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.form-forget .forgot-alert {
+  padding: 15px;
+  background-color: #f44336;
+  color: white;
+  margin:20px;
+width: 50%;
+margin-left:400px;
+  text-align: center;
+} 
+.forgot-closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.forgot-closebtn:hover {
+  color: black;
+}
+.profilepage #editor{
+  display: none;
+  left:500px;
+  top:100px;
+ 
+  color:steelblue;
+  position: relative;
+}
+
+.profilepage #feditor{
+  display: none;
+  /* left:500px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+.profilepage #leditor{
+  display: none;
+  /* left:10px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+
+.profilepage #oeditor{
+  display: none;
+  /* left:100px; */
+  top:30px;
+  right:90px;
+  color:steelblue;
+  position: relative;
+}
+.right .login-button{
+    top: 50px;
+    display: block;
+    padding: 10px 20px;
+    /* border-radius: 12px; */
+    letter-spacing: 4px;
+    background:white;
+    border-color: steelblue;
+}
+.right .login-button:hover {
+   background:steelblue;
+   color:white;
+   border-color: white;
+  } 
+
+  .loginform .forgot-password{
+      display:inline;
+      color:white;
+      
+  }
+  .loginform .signup-link{
+      display: block;
+      color:white;
+      left:100px;
+  }
+
+  .homepage{  
+    height: 100%;
+    width: 100%;
+     position: fixed;
+    /* z-index: 1;
+    top: 0; */
+    overflow-x: auto; 
+    padding-top: 20px; 
+    background-color:steelblue;      
+    }
+   .homepage .homeform img{
+      width:210px;
+    height:150px;
+   left: 43%;
+   right:55%;
+    position: relative;
+    }
+
+   .homepage .homeform h2{
+      left:50%;
+      /* bottom:50px; */
+       text-align: center; 
+      font-family: sans-serif;
+      color: white;
+      
+    }
+   
+
+.homeform .forgot-form label{
+  font-family: sans-serif;
+    color:white;
+    padding:2px;
+}
+.homeform .forgot-form input{
+  background:transparent;
+  color:white;
+  border:none;
+  border-bottom: 1px solid #fff;
+  width:300px;
+  font-size: 16px;
+}
+.homeform .dropdown{
+  background:transparent;
+  font-size:16px;
+  color:white;
+  border-bottom: 1px solid #fff;
+}
+
+.homeform .sec-options{
+background:steelblue;
+}
+.homeform .forgot-form{
+  
+  /* top:10px; */
+  left:400px;
+  /* right:50%; */
+  position: relative;
+  padding:30px;
+   /* width:400px;
+  height:210px;    */
+   border-radius: 10px;
+  transform: translate(100px, 50px);  
+}
+
+
+.homeform .login-button{
+   top: 50px; 
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  /* border-radius: 12px; */
+  left:600px;
+  letter-spacing: 4px;
+  background:white;
+  border-color: steelblue;
+}
+.homeform .login-button:hover {
+ background:steelblue;
+ color:white;
+ border-color: white;
+} 
+
+.resetpage{  
+  height: 100%;
+  width: 100%;
+   position: fixed;
+  /* z-index: 1;
+  top: 0; */
+  overflow-x: hidden; 
+  padding-top: 20px; 
+  background-color:steelblue;      
+  }
+
+.resetform label{
+  font-family: sans-serif;
+  color:white;
+  padding:7px;
+
+}
+
+.resetform input{
+  background:transparent;
+  color:white;
+  border:none;
+  border-bottom: 1px solid #fff;
+  width:200px;
+  font-size: 16px;
+}
+
+.resetpage .rpassform img{
+  width:210px;
+height:150px;
+left: 43%;
+right:55%;
+position: relative;
+}
+.resetpage .rpassform h2{
+  left:50%;
+  /* bottom:50px; */
+   text-align: center; 
+  font-family: sans-serif;
+  color: white;
+  
+}
+
+.rpassform .login-button{
+  top: 50px; 
+ position: relative;
+ display: block;
+ padding: 10px 20px;
+ /* border-radius: 12px; */
+ left:600px;
+ letter-spacing: 4px;
+ background:white;
+ border-color: steelblue;
+}
+.rpassform .login-button:hover {
+background:steelblue;
+color:white;
+border-color: white;
+} 
+
+
+.rpassform .resetform{
+  
+  /* top:10px; */
+  left:400px;
+  /* right:50%; */
+  position: relative;
+  padding:30px;
+   /* width:400px;
+  height:210px;    */
+   border-radius: 10px;
+  transform: translate(100px, 50px);  
+}
+
+
+.dashboard-form{  
+  height: 100%;
+  width: 100%;
+   position: fixed;
+  /* z-index: 1;*/
+  top: 0; 
+  overflow-x: hidden; 
+  /* padding-top: 20px;  */
+  background-color:#4682b4;      
+  }
+
+ .dashboard-form #mynav{
+   
+   color:steelblue;
+   font-weight:bold;
+ }
+ .dashboard-form .mynav-contents{
+   
+  color:steelblue;
+  font-weight:bold;
+}
+.dashboard-form .navbar-brand{
+  color:steelblue;
+}
+.dashboard-form .navbar-nav{
+  float: right;
+}
+ 
+  .dashboard-form .upload-button{
+    top: 150px;
+   position: relative;
+   display: block;
+   padding: 10px 30px;
+   /* border-radius: 12px; */
+   left:500px;
+   letter-spacing: 4px;
+   background:white;
+   border-color: steelblue;
+  }
+  .dashboard-form .upload-button:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+  } 
+
+  
+  .dashboard-form .draw-button{
+    top: 240px;
+   position: relative;
+   display: block;
+   padding: 10px 43px;
+   /* border-radius: 12px; */
+   left:500px;
+   letter-spacing: 4px;
+   background:white;
+   border-color: steelblue;
+  }
+  .dashboard-form .draw-button:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+  } 
+  .dashboard-form img{
+    width:210px;
+  height:150px;
+  margin: 20px;
+ left: 500px;
+ /* right:55%; */
+  position: relative;
+  }
+  .dashboard-form #button-h2{
+    display: block;
+  }
+
+  
+.profilepage{  
+  height: 100%;
+  width: 100%;
+   position: fixed;
+  /* z-index: 1;*/
+  top: 0; 
+  overflow-x: hidden; 
+  /* padding-top: 20px;  */
+  background-color:#4682b4;      
+  }
+
+  
+ .profileform #mynav{
+   
+  color:steelblue;
+  font-weight:bold;
+}
+.profileform .mynav-contents{
+  
+ color:steelblue;
+ font-weight:bold;
+}
+.profileform .navbar-brand{
+ color:steelblue;
+}
+.profileform .navbar-nav{
+ float: right;
+}
+
+.profileform h2{
+  left:50%;
+  top:100px;
+  /* bottom:50px; */
+   text-align: center; 
+  font-family: sans-serif;
+  color: white;
+}
+
+.profileform .profile-details label{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  display:inline-block;
+  left:500px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+}
+.profileform .profile-details p{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:600px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .email-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:560px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .fname-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:600px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .lname-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:600px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .org-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:580px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+.profileform .login-button{
+  top: 180px; 
+ position: relative;
+ display: block;
+ padding: 10px 20px;
+ /* border-radius: 12px; */
+ left:600px;
+ letter-spacing: 4px;
+ background:white;
+ border-color: steelblue;
+}
+.profileform .login-button:hover {
+background:steelblue;
+color:white;
+border-color: white;
+}
+
+.edit-input {
+  display: none;
+}
+.edit-box{
+    margin-left: 60px;
+    color: steelblue;
+    width:300px;
+    font-family: sans-serif;
+}
+.fedit-input {
+  display: none;
+}
+.fedit-box{
+    margin-left: 60px;
+    color: steelblue;
+    left:600px;
+    top:70px;
+    position: relative;
+    width:300px;
+    font-family: sans-serif;
+}
+
+
+.ledit-input {
+  display: none;
+}
+.ledit-box{
+    margin-left: 60px;
+    color: steelblue;
+    width:300px;
+    left:600px;
+    top:70px;
+    position:relative;
+    font-family: sans-serif;
+}
+
+
+.oedit-input {
+  display: none;
+}
+.oedit-box{
+    margin-left: 60px;
+    color: steelblue;
+    left:600px;
+    top:70px;
+    position: relative;
+    width:300px;
+    font-family: sans-serif;
+}
+
+.upload-sign-form{
+  height: 100%;
+  width: 100%;
+   position: fixed;
+  /* z-index: 1;*/
+  top: 0; 
+  margin-right: 20px;
+  overflow-x: hidden; 
+  /* padding-top: 20px;  */
+  background-color:steelblue; 
+}
+
+.upload-sign-form label{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:500px;
+  margin-top: 30px;
+  position: relative;
+  font-size: 20px;
+}
+.upload-sign-form input{
+  margin-top: 30px;
+
+}
+.upload-sign-form #preferred-name{
+font-family: sans-serif;
+  color:white;
+  padding:2px;
+  display:inline-block;
+  left:200px;
+  top:10px;
+  position: relative;
+  font-size: 18px;
+}
+.upload-sign-form #preferred{
+font-family: sans-serif;
+
+  padding:2px;
+  left:500px;
+  /* top:10%; */
+  bottom:60px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.upload-sign-form .login-button-save{
+  top: 10px;
+position: relative;
+  display: block;
+  padding: 10px 20px;
+  /* border-radius: 12px; */
+  letter-spacing: 4px;
+  background:white;
+  border-color: steelblue;
+}
+.upload-sign-form .login-button-save:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+
+
+.upload-sign-form .login-button-preview{
+  top: 20px;
+    margin-left: -130px;
+  display: inline-block;
+  padding: 10px 20px;
+  position: relative;
+  /* border-radius: 12px; */
+  letter-spacing: 4px;
+  background:white;
+  border-color: steelblue;
+}
+.upload-sign-form .login-button-preview:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+ 
+.upload-sign-form .login-button-upload{
+  top: 10px;
+  display: inline;
+  padding: 10px 20px;
+  position: relative;
+  /* border-radius: 12px; */
+  letter-spacing: 4px;
+  background:white;
+  left: 200px;
+  border-color: steelblue;
+}
+.upload-sign-form .login-button-upload:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+
+ .upload-sign-form #p2{
+ visibility:hidden; 
+}
+
+
+.upload-sign-form #p3{ 
+  visibility:hidden; 
+ }
+  
+ 
+ .upload-sign-form #mynav{
+   
+  color:steelblue;
+  font-weight:bold;
+}
+.upload-sign-form .mynav-contents{
+  
+ color:steelblue;
+ font-weight:bold;
+}
+.upload-sign-form .navbar-brand{
+ color:steelblue;
+}
+.upload-sign-form .navbar-nav{
+ float: right;
+}
+
+.draw-sign-form{
+  height: 100%;
+  width: 100%;
+   position: fixed;
+  /* z-index: 1;*/
+  top: 0;
+ 
+  overflow-x: hidden; 
+  /* padding-top: 20px;  */
+  background-color:steelblue; 
+}
+.draw-sign-form h2{
+  left:50%;
+  bottom:50px;
+   text-align: center;
+  font-family: sans-serif;
+  color: white;
+}
+
+.draw-sign-form .canvas {
+    background: white;
+    position: relative;
+    /* top:10; */
+    top: 50px;
+    left: 10%;
+    border: 2px solid;
+}
+
+
+.draw-sign-form h2{
+  left:50%;
+  bottom:50px;
+   text-align: center;
+  font-family: sans-serif;
+  color: white;
+}
+.draw-sign-form .canvas-body{
+  padding-top: 20px;
+  top:600px;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+
+
+}
+.draw-sign-form #canvasimg{
+  position:absolute;
+  /* top:10%; */
+  top:250px;
+  left:52%;
+  display:none;
+  background: white;
+}
+
+.draw-sign-form .canvas{
+  background: white;
+
+    position:relative;
+    /* top:10; */
+     top:50px;
+    left:10%;
+    border:2px solid;
+
+}
+.draw-sign-form #mynav{
+   
+  color:steelblue;
+  font-weight:bold;
+}
+.draw-sign-form .mynav-contents{
+  
+ color:steelblue;
+ font-weight:bold;
+}
+.draw-sign-form .navbar-brand{
+ color:steelblue;
+}
+.draw-sign-form .navbar-nav{
+ float: right;
+}
+
+.draw-sign-form .eraser{
+  position:absolute;
+  /* top:10%; */
+  top:300px;
+  text-align: center;
+  font-weight:bold;
+  background: white;
+  left:45%;
+}
+.draw-sign-form .btn2{
+  /* top: 200px; */
+  bottom:30px;
+    display: inline-block;
+    padding: 10px 20px;
+  display:none;
+  position:relative;
+  /* top:80%; */
+  /* bottom:10%; */
+  left:62%;
+    /* border-radius: 12px; */
+    letter-spacing: 4px;
+    background:white;
+    /* background:red; */
+    border-color: steelblue;
+}
+.draw-sign-form .btn2:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+.draw-sign-form #btn{
+   top: 50px;
+  bottom :20px;
+    display: block;
+    padding: 10px 20px;
+    position: relative;
+    /* border-radius: 12px; */
+    letter-spacing: 4px;
+    background:white;
+    border-color: steelblue;
+    left:15%;
+    /* position:absolute; */
+    /* top:80%; */
+    /* left:20%; */
+}
+.draw-sign-form #btn:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+
+ .draw-sign-form #clr{
+  top: 8px;
+  bottom:20px;
+  position:relative;
+    display: inline-block;
+    margin-left: 50px;
+    padding: 10px 20px;
+    /* border-radius: 12px; */
+    letter-spacing: 4px;
+    background:white;
+    border-color: steelblue;
+    /* position:absolute; */
+    /* top:80%; */
+     left:20%;
+}
+.draw-sign-form #clr:hover {
+  background:steelblue;
+  color:white;
+  border-color: white;
+ }
+  .h2-draw{
+   color:white;
+ }
+
+  .output_image{
+      width: 50%;
+      height: 100%;
+  }
+  .profilepage #feditor{
+  display: none;
+  /* left:500px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+.profilepage #leditor{
+  display: none;
+  /* left:10px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+
+.profilepage #oeditor{
+  display: none;
+  /* left:100px; */
+  top:30px;
+  right:90px;
+  color:steelblue;
+  position: relative;
+}
+.profileform .profile-details .fname-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:600px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .lname-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:600px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.profileform .profile-details .org-text{
+  font-family: sans-serif;
+  color:white;
+  padding:2px;
+  left:580px;
+  top:100px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+.profilepage #feditor{
+  display: none;
+  /* left:500px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+.profilepage #leditor{
+  display: none;
+  /* left:10px; */
+  top:30px;
+  right:70px;
+  color:steelblue;
+  position: relative;
+}
+
+.profilepage #oeditor{
+  display: none;
+  /* left:100px; */
+  top:30px;
+  right:90px;
+  color:steelblue;
+  position: relative;
+}
+.fedit-input {
+  display: none;
+}
+.fedit-box{
+    margin-left: 60px;
+    color: steelblue;
+    left:600px;
+    top:70px;
+    position: relative;
+    width:300px;
+    font-family: sans-serif;
+}
+
+
+.ledit-input {
+  display: none;
+}
+.ledit-box{
+    margin-left: 60px;
+    color: steelblue;
+    width:300px;
+    left:600px;
+    top:70px;
+    position:relative;
+    font-family: sans-serif;
+}
+
+
+.oedit-input {
+  display: none;
+}
+.oedit-box{
+    margin-left: 60px;
+    color: steelblue;
+    left:600px;
+    top:70px;
+    position: relative;
+    width:300px;
+    font-family: sans-serif;
+}
+
+.upload-sign-form #preferred-name{
+font-family: sans-serif;
+  color:white;
+  padding:2px;
+  display:inline-block;
+  left:200px;
+  top:10px;
+  position: relative;
+  font-size: 18px;
+}
+.upload-sign-form #preferred{
+font-family: sans-serif;
+
+  padding:2px;
+  left:500px;
+  /* top:10%; */
+  bottom:60px;
+  position: relative;
+  font-size: 18px;
+  display:inline;
+}
+
+.draw-sign-form #preferred-name{
+  font-family: sans-serif;
+    color:white;
+    padding:2px;
+    display:inline-block;
+    left:300px;
+    top:10px;
+    position: relative;
+    font-size: 18px;
+  }
+  .draw-sign-form #preferred{
+  font-family: sans-serif;
+
+    padding:2px;
+    left:400px;
+    top:10px;
+    /* top:10%; */
+    bottom:60px;
+    position: relative;
+    font-size: 18px;
+    display:inline;
+  }
+  div#loading {
+    width: 35px;
+    height: 35px;
+    display: none;
+    background: rgba(76, 175, 80, 0.3);
+    cursor: wait;
+    }

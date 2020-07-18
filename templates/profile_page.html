@@ -1,0 +1,301 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Profile Page
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/signin.css') }}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script type="text/javascript">
+ function toggleEditor() {
+   var theText = document.getElementById('thetext');
+   var theEditor = document.getElementById('ta1');
+   var editorArea = document.getElementById('editor');
+
+   var ftheText = document.getElementById('fthetext');
+   var ftheEditor = document.getElementById('fta1');
+   var feditorArea = document.getElementById('feditor');
+
+   var ltheText = document.getElementById('lthetext');
+   var ltheEditor = document.getElementById('lta1');
+   var leditorArea = document.getElementById('leditor');
+
+   var otheText = document.getElementById('othetext');
+   var otheEditor = document.getElementById('ota1');
+   var oeditorArea = document.getElementById('oeditor');
+
+
+   var ftheText = document.getElementById('fthetext');
+   var ftheEditor = document.getElementById('fta1');
+   var feditorArea = document.getElementById('feditor');
+
+   var ltheText = document.getElementById('lthetext');
+   var ltheEditor = document.getElementById('lta1');
+   var leditorArea = document.getElementById('leditor');
+
+   var otheText = document.getElementById('othetext');
+   var otheEditor = document.getElementById('ota1');
+   var oeditorArea = document.getElementById('oeditor');
+
+   //set text in text div to textarea
+   //correct line breaks, prevent HTML injection
+   var subject = theText.innerHTML;
+   var fsubject = ftheText.innerHTML;
+   var lsubject = ltheText.innerHTML;
+   var osubject = otheText.innerHTML;
+
+  //  subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+  //  subject = subject.replace(new RegExp("<br />", "gi"), 'n');
+  //  subject = subject.replace(new RegExp("<", "gi"), '<');
+  //  subject = subject.replace(new RegExp(">", "gi"), '>');
+
+   theEditor.value = subject;
+   ftheEditor.value = fsubject;
+   ltheEditor.value = lsubject;
+   otheEditor.value = osubject;
+
+   ftheEditor.value = fsubject;
+   ltheEditor.value = lsubject;
+   otheEditor.value = osubject;
+
+   //hide text, show editor
+   theText.style.display = 'none';
+   editorArea.style.display = 'inline';
+
+   ftheText.style.display = 'none';
+   feditorArea.style.display = 'inline';
+
+   ltheText.style.display = 'none';
+   leditorArea.style.display = 'inline';
+
+   otheText.style.display = 'none';
+   oeditorArea.style.display = 'inline';
+}
+
+
+function doEdit() {
+   var theText = document.getElementById('thetext');
+   var theEditor = document.getElementById('ta1');
+   var editorArea = document.getElementById('editor');
+
+   var ftheText = document.getElementById('fthetext');
+   var ftheEditor = document.getElementById('fta1');
+   var feditorArea = document.getElementById('feditor');
+
+   var ltheText = document.getElementById('lthetext');
+   var ltheEditor = document.getElementById('lta1');
+   var leditorArea = document.getElementById('leditor');
+
+   var otheText = document.getElementById('othetext');
+   var otheEditor = document.getElementById('ota1');
+   var oeditorArea = document.getElementById('oeditor');
+
+
+   var ftheText = document.getElementById('fthetext');
+   var ftheEditor = document.getElementById('fta1');
+   var feditorArea = document.getElementById('feditor');
+
+   var ltheText = document.getElementById('lthetext');
+   var ltheEditor = document.getElementById('lta1');
+   var leditorArea = document.getElementById('leditor');
+
+   var otheText = document.getElementById('othetext');
+   var otheEditor = document.getElementById('ota1');
+   var oeditorArea = document.getElementById('oeditor');
+
+   //this is where you would call your AJAX update script
+   //e.g., doXMLRequest(data);
+   //you probably want to make your DB update BEFORE converting for display
+ 
+   //set text to be value in editor
+   //correct line breaks, prevent HTML injection
+   var subject = theEditor.value;
+   var fsubject = ftheEditor.value;
+   var lsubject = ltheEditor.value;
+   var osubject = otheEditor.value;
+
+  //  subject = subject.replace(new RegExp("<", "g"), '<');
+  //  subject = subject.replace(new RegExp(">", "g"), '>');
+  //  subject = subject.replace(new RegExp("n", "g"), '<br />');
+   theText.innerHTML = subject;
+   ftheText.innerHTML = fsubject;
+   ltheText.innerHTML = lsubject;
+   otheText.innerHTML = osubject;
+
+   ftheText.innerHTML = fsubject;
+   ltheText.innerHTML = lsubject;
+   otheText.innerHTML = osubject;
+
+  theText.style.display = 'inline';
+   editorArea.style.display = 'none';
+
+   ftheText.style.display = 'inline';
+   feditorArea.style.display = 'none';
+
+   ltheText.style.display = 'inline';
+   leditorArea.style.display = 'none';
+
+   otheText.style.display = 'inline';
+   oeditorArea.style.display = 'none';
+
+
+   ftheText.style.display = 'inline';
+   feditorArea.style.display = 'none';
+
+   ltheText.style.display = 'inline';
+   leditorArea.style.display = 'none';
+
+   otheText.style.display = 'inline';
+   oeditorArea.style.display = 'none';
+
+   //hide editor, show text
+}
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="profilepage">
+    <div class="profileform">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="{{url_for('home')}}">CalPERS</a>
+                
+              </div>
+              <ul class="nav navbar-nav ">
+                
+                <li class="dropdown">
+                  <a class="dropdown-toggle " id="mynav" data-toggle="dropdown" >{% if session.loggedin %}
+                    Hi {{session.user}}
+                            {% endif %}
+                  <span class="caret"></span></a>
+                  <ul class="dropdown-menu" >
+                    <li ><a class="mynav-contents" href="{{url_for('logout')}}">Logout</a></li>
+                   </ul>
+                </li>
+                
+              </ul>
+            </div>
+          </nav>
+
+          <h2>PROFILE INFORMATION</h2>
+        <form class="form-signin" action="{{url_for('editprofile')}}" method="post">
+
+          <div class="profile-details">
+            <label>Username:</label>
+            <p>{% if session.loggedin %}
+                {{session.user}}
+                {% endif %}</p>
+          </div>
+          <div class="profile-details">
+            <label>Email Address:</label>
+            <p id="thetext" class="email-text" onclick="toggleEditor()">{% if session.loggedin %}{{ email }}{% endif %}</p>
+            <input type="text" class="edit-input" />
+            <div id="editor">
+                <input id="ta1" class="edit-box"  name="ta1"><br />
+            </div>
+          </div>
+
+          <div class="profile-details">
+            <label>First Name:</label>
+          <!-- <p class="p-email">User's email  will be displayed here</p>    -->
+          <p id="fthetext" class="fname-text"  onclick="toggleEditor()">user's first name</p>
+          <input type="text" class="fedit-input" />
+          <div id="feditor">
+            <input id="fta1" class="fedit-box"  name="ta1"><br />
+            <!-- <input name="submit" id="submit" type="button" value="Edit Text" onclick="doEdit()" /> -->
+        </div>
+          </div>
+
+          <div class="profile-details">
+            <label>Last Name:</label>
+          <!-- <p class="p-email">User's email  will be displayed here</p>    -->
+          <p id="lthetext" class="lname-text" onclick="toggleEditor()">User's Last name</p>
+          <input type="text" class="ledit-input" />
+          <div id="leditor">
+            <input id="lta1" class="ledit-box"  name="ta1"><br />
+            <!-- <input name="submit" id="submit" type="button" value="Edit Text" onclick="doEdit()" /> -->
+        </div>
+          </div>
+
+          <div class="profile-details">
+            <label>Organisation:</label>
+          <!-- <p class="p-email">User's email  will be displayed here</p>    -->
+          <p id="othetext" class="org-text" onclick="toggleEditor()">User's Organisation</p>
+          <input type="text" class="oedit-input" />
+          <div id="oeditor">
+            <input id="ota1" class="oedit-box"  name="ta1"><br />
+            <!-- <input name="submit" id="submit" type="button" value="Edit Text" onclick="doEdit()" /> -->
+        </div>
+          </div>
+
+           <div class="profile-details">
+            <label>First Name:</label>
+            <p id="fthetext" class="fname-text"  onclick="toggleEditor()" default="firstname">{% if session.loggedin %}{{session.firstname}} {% endif %}</p>
+            <input type="text" class="fedit-input" />
+            <div id="feditor">
+            <input id="fta1" class="fedit-box"  name="fta1" value="enter firstname"><br />
+            </div>
+          </div>
+
+          <div class="profile-details">
+            <label>Last Name:</label>
+            <p id="lthetext" class="lname-text" onclick="toggleEditor()" default="lastname">{% if session.loggedin %}{{session.lastname}} {% endif %}</p>
+            <input type="text" class="ledit-input" />
+            <div id="leditor">
+                <input id="lta1" class="ledit-box"  name="lta1" value="enter lastname"><br />
+            </div>
+          </div>
+
+          <div class="profile-details">
+            <label>Organisation:</label>
+            <p id="othetext" class="org-text" onclick="toggleEditor()" default="org">{% if session.loggedin %}{{session.orgname}} {% endif %}</p>
+            <input type="text" class="oedit-input" />
+            <div id="oeditor">
+                <input id="ota1" class="oedit-box"  name="ota1" value="enter org name"><br />
+            </div>
+          </div>
+          <div class="profile-details">
+              <label>Signature:</label>
+              {% if session.loggedin %}
+              {% if name == ' ' %}
+                {{imagepath}}
+              {% else %}
+                {% for image in name %}
+                 <p>
+                  <input type="radio" name="radio" value="{{ image }}" ><img src="/static/uploads/{{image}}/" width="6%", height="6%"></input>
+                 </p>
+                {% endfor %}
+              {% endif %}
+              {% endif %}
+          </div>
+            <div class="profile-details">
+              <label>Preferred name:</label>
+              {% if session.loggedin %}
+
+                 <p>
+                    {{ prename }}
+                 </p>
+
+              {% endif %}
+          </div>
+          <div class="profile-details">
+            <label>Default sign</label>
+            <p>{% if session.loggedin %}
+                {{session.defaultsign}}
+                {% endif %}</p>
+          </div>
+
+
+
+       <button name="submit" id="submit" class="login-button" type="submit" onclick="doEdit()">EDIT DETAILS</button>
+    </div>
+</div>
+
+</div>
+</form>
+
+{% endblock %}

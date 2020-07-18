@@ -1,0 +1,91 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+Sign Up
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/signin.css') }}">
+<!-- <script  src="{{ url_for('static', filename='js/jquery-3.5.1.js')}}"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+
+<script type="text/javascript">
+  $(function () {
+      $("#btnSignUp").click(function () {
+          var pass = $("#inputPassword").val();
+          var cpass = $("#confirmPassword").val();
+          if (pass != cpass) {
+              alert("Passwords do not match.");
+              return false;
+          }
+          return true;
+      });
+  });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="split left">
+    <div class="centered">  
+     </div>
+  </div>
+  
+  <div class="split right">
+    <div class="centered">
+      {% with messages= get_flashed_messages() %}
+                {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert">
+                          <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                          <h4 id="signup-alert" class="{{ category }}"> {{ message }}</h4>
+                        </div>
+                           <!-- <h3 id="signup-alert">   {{ message }}</h3>  -->
+                        {% endfor %}
+                {% endif %}
+        {% endwith %}
+     
+        <div class="loginform">
+            <img src="https://tukuz.com/wp-content/uploads/2019/11/california-public-employees-retirement-system-calpers-logo-vector.png" alt="calpers">
+            <h2>SIGNUP</h2>
+            <form class="form-signin" action="{{url_for('showsignup')}}" method="post">
+              <div class="userform">
+                <label for="inputUsername">Username</label>
+                <input type="text" name="inputUsername" pattern="[a-zA-Z0-9]{8,15}" title="Username should only contain letters and numbers. Username should be minimum 8 characters" required="">               
+              </div>
+              <div class="userform">
+                <label for="inputEmail">Email Address</label>
+                <input type="email" name="inputEmail" pattern="^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,}$" title="Enter valid Email Address" required="">                
+              </div>
+
+              <div class="userform">
+                <label for="inputPassword">Password</label>
+                <input type="password" id="inputPassword" name="inputPassword" pattern="[A-Za-z0-9@#$%^&+=]{8,}" title="Password should contain letters,numbers, @ # $ % ^ & + = with min length of 8" required="">                
+              </div>
+              <div class="userform">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required="">                
+              </div>
+              <div>
+                <label for="securityQuestion">Security Question</label>                
+                <select class="dropdown" name="dropdown" id="dropdown">
+            {% for secque in dropdown %}
+                <option class="sec-options" value="{{secque}}">{{secque}}</option>
+            {% endfor %}
+                   
+                </select>
+                <br><br>
+                <input type="text" name="dropdown-answer" class="sec-answer" pattern="[a-zA-Z0-9]+" title="Should only contain letters and numbers" required autofocus>
+            <br><br>
+              </div>
+              <br>         
+              <a class="signup-link" href="{{url_for('login')}}">Already a User? Login</a>
+              <br>
+              
+              <button id="btnSignUp" class="login-button"type="submit">SUBMIT</button>
+            </form>
+          </div>
+     
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}
+ESignature Management
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/signin.css') }}">
+{% endblock %}
+
+{% block content %}   
+<div class="split left">
+    <div class="centered">  
+     </div>
+  </div>
+  
+  <div class="split right">
+    <div class="centered">
+      {% with messages= get_flashed_messages() %}
+      {% if messages %}
+              {% for message in messages %}
+              <h3 id="signup-alert"> {{ message }}</h3> 
+              {% endfor %}
+      {% endif %}
+{% endwith %}
+        <div class="loginform">
+            <img src="https://tukuz.com/wp-content/uploads/2019/11/california-public-employees-retirement-system-calpers-logo-vector.png" alt="calpers">
+            <h2>LOGIN</h2>
+            <form class="form-signin" action="{{url_for('showlogin')}}" method="post">
+              <div class="userform">
+                <label for="inputUsername1">Username</label><br>
+                <input name="inputUsername1" type="text"  required="">
+               
+              </div>
+              <div class="userform">
+                <label for="inputPassword1">Password</label><br>
+                <input name="inputPassword1" type="password" required="">
+                
+              </div>
+              <br>
+              
+              <a class="forgot-password" href="{{url_for('forgotpwd')}}">Forgot password?</a>
+              <a class="signup-link" href="{{url_for('signup')}}">New User? Sign Up</a>
+              <br>
+              <button class="login-button"type="submit">LOGIN</button>
+            </form>
+          </div>
+     
+    </div>
+  </div>
+{% endblock %}
